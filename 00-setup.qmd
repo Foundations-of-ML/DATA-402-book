@@ -1,0 +1,239 @@
+---
+title: "Intro and Workflow Setup"
+---
+
+
+## Objectives {#ch0-objectives .unnumbered}
+
+While most students will arrive having taken an introductory programming course and/or Summer python intensive workshop, it is important to start this class with some computer fundamentals and some setup and workflow preparation. 
+
+This chapter is meant to provide a resource for some basic computer skills and a guide to the workflow we expect you to follow when managing your code and data.
+
+In this chapter you will:
+
+-   Learn the basics of a computer system.
+-   Create a GitHub account and practice using it for managing code and data artifacts.
+-   Practice using Google Colab notebooks for quick tasks and activities.
+-   Install `python` locally on your machine via Anaconda.
+-   Practice opening and using `jupyter` notebooks in Anaconda.
+-   Install the `quarto` document rendering system.
+-   Practice using `quarto` to render nicely formatted html documents from `jupyter` notebooks.
+
+If you already feel comfortable with your own file organization system; you prefer GitLab over GitHub; or you prefer to use another `python` distribution and IDE (like `VSCode`), that is acceptable.  Just know that we may be less able to help you and troubleshoot if you deviate from the recommended workflow.
+
+For grading consistency, we **will** require that you submit `quarto`-rendered documents for all labs and projects.
+
+## Computer Basics
+
+It is helpful when teaching a topic as technical as programming to ensure that everyone starts from the same basic foundational understanding and mental model of how things work. When teaching geology, for instance, the instructor should probably make sure that everyone understands that the earth is a round ball and not a flat plate -- it will save everyone some time later.
+
+We all use computers daily - we carry them around with us on our wrists, in our pockets, and in our backpacks. This is no guarantee, however, that we understand how they work or what makes them go.
+
+### Hardware
+
+Here is a short 3-minute video on the basic hardware that makes up your computer. It is focused on desktops, but the same components (with the exception of the optical drive) are commonly found in cell phones, smart watches, and laptops.
+
+:::{.callout-learn-more .icon}
+
+{{ <video "https://www.youtube.com/embed/Rdm8E59L8Og >}}
+
+:::
+
+When programming, it is usually helpful to understand the distinction between RAM and disk storage (hard drives). We also need to know at least a little bit about processors (so that we know when we've asked our processor to do too much). Most of the other details aren't necessary (for now).
+
+<!-- ::: learn-more -->
+
+<!-- -   [Chapter 1 of Python for Everybody](https://www.py4e.com/html3/01-intro) - Computer hardware architecture -->
+
+<!-- ::: -->
+
+### Operating Systems
+
+Operating systems, such as Windows, MacOS, or Linux, are a sophisticated program that allows CPUs to keep track of multiple programs and tasks and execute them at the same time.
+
+:::{.callout-learn-more .icon}
+{{ <video https://www.youtube.com/embed/RhHMgkUdhdk" > }}
+:::
+
+### File Systems {#file-systems}
+
+Evidently, there has been a bit of generational shift as computers have evolved: the "file system" metaphor itself is outdated because no one uses physical files anymore. [This article](https://futurism.com/the-byte/gen-z-kids-file-systems) is an interesting discussion of the problem: it makes the argument that with modern search capabilities, most people use their computers as a laundry hamper instead of as a nice, organized filing cabinet.
+
+![](https://i.redd.it/1m9l0op71go21.png){width=80% fig-align="center"}
+
+Regardless of how you tend to organize your personal files, it is probably helpful to understand the basics of what is meant by a computer **file system** -- a way to organize data stored on a hard drive. Since data is always stored as 0's and 1's, it's important to have some way to figure out what type of data is stored in a specific location, and how to interpret it.
+
+:::{.callout-required-video .icon}
+
+{{ <video https://www.youtube.com/embed/BV0-EPUYuQc >}}
+
+Stop watching at 4:16.
+:::
+
+That's not enough, though - we also need to know how computers remember the location of what is stored where. Specifically, we need to understand **file paths**.
+
+:::{.callout-required-video .icon}
+{{ <video https://www.youtube.com/embed/BMT3JUWmqYY >}}
+:::
+
+<br>
+
+:::{.callout-opinion .icon collapse="true"}
+Recommend watching - helpful for understanding file paths!
+:::
+
+
+When you write a program, you may have to reference external files - data stored in a .csv file, for instance, or a picture. Best practice is to create a file structure that contains everything you need to run your entire project in a single file folder (you can, and sometimes should, have sub-folders).
+
+For now, it is enough to know how to find files using file paths, and how to refer to a file using a relative file path from your base folder. In this situation, your "base folder" is known as your **working directory** - the place your program thinks of as home.
+
+## Git and GitHub
+
+One of the most important parts of a data scientist's workflow is **version tracking**: the process of making sure that you have a record of the changes and updates you have made to your code.
+
+### Git
+
+**Git** is a computer program that lives on your local 
+computer. Once you designate a folder as a **Git Repository**, the program will automatically tracks changes to the files in side that folder.  
+
+:::{.callout-check-in .icon}
+[Click here to install Git on your computer.](https://git-scm.com/downloads)
+:::
+
+### GitHub
+
+**GitHub**, and the less used alternate **GitLab**, are websites where *Git Repositories* can be stored online.  This is useful for sharing your repository ("repo") with others, for multiple people collaborating on the same repository, and for yourself to be able to access your files from anywhere.
+
+:::{.callout-check-in .icon}
+[Click here to make a GitHub account](www.github.com), if you do not already have one.
+
+You do **not** have to use your school email for this account.
+:::
+
+### Practice with Repos
+
+If you are already familiar with how to use Git and GitHub, you can skip the rest of this section, which will walk us through some practice making and editing repositories.
+
+First, watch this 15-minute video, which nicely illustrates the basics of version tracking:
+
+:::{.callout-required-video .icon}
+{{ <video https://www.youtube.com/embed/BCQHnlnPusY?si=L9C5waHxDzib-VwY >}}
+:::
+
+Then, watch this 10-minute video, which introduces the idea of **branches**, and important habit for collaborating with others (or your future self!)
+
+:::{.callout-required-video .icon}
+{{ <video https://www.youtube.com/embed/oPpnCh7InLY?si=Yzezgt3R4n1OYBdV >}}
+:::
+
+:::{.callout-opinion .icon collapse="true"}
+Although Git can sometimes be a headache, it is worth the struggle.  Never again will you have to deal with a folder full of documents that looks like:
+
+```
+Project-Final
+Project-Final-1
+Project-Final-again
+Project-Final-1-1
+Project-Final-for-real
+```
+:::
+
+Working with Git and GitHub can be made a lot easier by helper tools and apps.  We recommend [GitHub Desktop](https://desktop.github.com/) for your committing and pushing.
+
+### Summary
+
+For our purposes, it will be sufficient for you to learn to:
+
+* **commit** your work frequently as you make progress; about as often as you might *save* a document
+
+* **push** your work every time you step away from your project
+
+* **branch** your repo when you want to try something and you aren't sure it will work.
+
+
+It will probably take you some time to get used to a workflow that feels natural to you - that's okay!  As long as you are trying out version control, you're doing great.
+
+![](https://i.redd.it/0cxiwyvthgc61.png){width=80% fig-align="center"}
+
+## Anaconda and Jupyter
+
+Now, let's talk about getting python actually set up and running.
+
+![](https://i.redd.it/d28emc32q6271.png){width=80% fig-align="center"}
+
+### Anaconda
+
+One downside of `python` is that it can sometimes be complicated to keep track of installs and updates.
+
+![](https://img.devrant.com/devrant/rant/r_1794625_EDg9q.jpg){width=80% fig-align="center"}
+
+
+
+Unless you already have a `python` environment setup that works for you, we will suggest that you use **Anaconda**, which bundles together an installation of the most recent `python` version as well as multiple tools for interacting with the code.
+
+:::{.callout-check-in .icon}
+[Download Anaconda here](https://www.anaconda.com/download)
+:::
+
+
+### Jupyter
+
+When you are writing ordinary text, you choose what type of document to use - Microsoft Word, Google Docs, LaTeX, etc.
+
+Similarly, there are many types of files where you can write `python` code.  By far the most common and popular is the `jupyter` notebook.
+
+The advantage of a `jupyter` notebook is that ordinary text and "chunks" of code can be interspersed.
+
+![](https://jupyter-dashboards-layout.readthedocs.io/en/latest/_images/notebook.png){width=80% fig-align="center"}
+
+Jupyter notebooks have the file extension `.ipynb` for "i python notebook".
+
+#### Google Colab
+
+One way you may have seen the Jupyter notebooks before is on Google's free cloud service, [Google Colab](https://colab.research.google.com/).
+
+:::{.callout-practice-exercise .icon}
+
+Open up [this colab notebook](https://colab.research.google.com/drive/1Lq8ccz71GJAIb9MZmxQMgr9mm1gY4dXp?usp=sharing) and make a copy.
+
+Fill out the sections where indicated, to practice using Jupyter notebooks.
+
+:::
+
+
+:::{.callout-opinion .icon collapse="true"}
+
+Colab is an amazing data science tool that allows for easy collaboration.
+
+However, there is a limited amount of free compute time offered by Google, and not as much flexibility or control over the documents.
+
+This is why we need Anaconda or similar local installations.
+
+:::
+
+## Quarto
+
+Although jupyter and Colab are fantastic tools for data analysis, one major limitation is that the raw notebooks themselves are not the same as a final clear report.
+
+To convert our interactive notebooks into professionally presented static documents, we will use a program called `Quarto`.
+
+:::{.callout-check-in .icon}
+[Download Quarto here](https://quarto.org/docs/get-started/)
+:::
+
+Once quarto is installed, converting a `.ipynb` file 
+requires running only a single line in the *Terminal*:
+
+```
+quarto render my_file.ipynb
+```
+
+:::{.callout-check-in .icon}
+Download the .ipynb file from your practice Colab notebook, open it using Anaconda, and render it using Quarto. 
+:::
+
+However, there are also many, many options to make the final rendered document look even more visually pleasing and professional.  Have a look at the Quarto documentation if you want to play around with themes, fonts, layouts, and so on.
+
+:::{.callout-learn-more .icon collapse="true"}
+https://quarto.org/docs/get-started/hello/jupyter.html
+:::

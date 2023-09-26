@@ -1,0 +1,45 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "GSB 544: Data Science and Machine Learning with Python"
+  author: "Kelly Bodwin and Hunter Glanz"
+  date: "Sept 1, 2023"
+  chapters:
+    - index.qmd
+    - 00-setup.qmd
+    - 01-basics.qmd
+    - 02-plotnine.qmd
+  site-url: https://DS-ML-with-python.github.io/Course-Textbook/
+  repo-url: https://github.com/DS-ML-with-python/Course-Textbook/
+  repo-branch: main
+  repo-actions: [edit]
+  sharing: [twitter, facebook, linkedin]
+  # toc:
+    # collapse: section
+
+bibliography: references.bib
+
+engine: knitr
+
+#pdf-engine: context
+
+from: markdown+emoji
+
+format:
+  html:
+    css: style.css
+    # theme: cosmo
+    code-link: true
+    theme:
+      light: [flatly, custom-callouts.scss]
+      dark: [darkly, custom-callouts.scss]
+
+  # pdf:
+  #   documentclass: scrreport
+  #epub:
+  #  cover-image: cover.png
+
+editor: source
+
